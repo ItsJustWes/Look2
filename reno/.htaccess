@@ -1,0 +1,15 @@
+php_value register_globals 1
+
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule (.*).htm$ http://www.look2reno.com/search.php?q=$1 
+
+
+RewriteCond %{HTTP_HOST} ^look2reno\.com [NC]
+RewriteRule ^(.*)$ http://www.look2reno.com/$1 [L,R=301]
+
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+RewriteRule ^images/e/(.*)$ http://thumbs.ebaystatic.com/pict/$1 [R,L]

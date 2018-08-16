@@ -1,0 +1,11 @@
+Thank you for purchasing phpBay Pro API.  To help you get up and going quickly and to demonstrate how the API works, I've created a series of tutorials as examples, in the /examples/ folder.
+
+Open up the ebay.php file in the /examples folder and set the initial values.  If you do not have an Ebay affiliate ID yet, just leave the default that's already there.  Once your site is set, save the file.
+
+Upload the /examples folder to your web host root.  Such, that you would access it like:
+
+http://www.yoursite.com/examples/index.html
+
+Open the url in your browser.  From there, follow the examples to see various uses phpBay Pro API and be sure to view the source code of each file, to see how it works.  There is also a help file that contains documentation on the various parameters you can use.
+
+This should help you get up and going fairly quick.  If you have any questions, just let me know.

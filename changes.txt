@@ -1,0 +1,259 @@
+
+www.porschepartspro.com  - built 12/02/07 - phpBay
+
+www.porsche911pro.com  - built 12/02/07 - phpBay
+
+
+www.look2yellowpages.com
+www.look2canada.com
+
+www.look2alberta.com
+11/09/07
+Results 1 - 10 of about 431 from www.look2alberta.com
+01/29/08
+set to faster crawl rate
+
+
+
+www.look2britishcolumbia.com
+11/09/07
+Results 1 - 10 of about 298 from www.look2britishcolumbia.com.
+
+
+www.look2saskatchewan.com
+11/09/07
+Results 1 - 10 of about 103 from www.look2saskatchewan.com
+removed all outgoing links from b.php to compare with PEI's result against Victorias
+12/05/07
+Results 1 - 10 of about 23 from www.look2saskatchewan.com
+
+www.look2manitoba.com
+11/23/07
+built site using adbi pro script on different server
+12/05/07
+results = 3 pages indexed
+
+www.look2newbrunswick.com
+www.look2newfoundland.com
+www.look2novascotia.com
+www.look2quebec.com
+
+www.look2princeedwardisland.com
+11/09/07
+1 - 10 of about 38 from www.look2princeedwardisland.com
+removed US yellowpage links from b.php to compare with PEI and Victoria
+12/05/07
+Results 1 - 10 of about 47 from www.look2princeedwardisland.com.
+
+www.look2northwestterritory.com
+11/09/07
+Results 1 - 10 of about 19 from www.look2northwestterritories.com
+added;
+printf("<font size=\"1\">If you are \"%s, %s, %s, British Columbia %s\" and would like to update your listing<br>email us at update@look2yellowpages.com.</font>\n", $row["Name"], $row["Address"],  $row["City"],  $row["Province"],  $row["Zip"]);
+similiair to Victoria change to see if there is improvement from that change
+didn't remove any links
+12/05/07
+Results 1 - 10 of about 17 from www.look2northwestterritories.com.
+
+
+www.look2nunavut.com
+
+www.look2vancouver.com
+09/30/07
+Changed businesspage.php...added
+echo "<center><font Size=\"3\" color=\"#800000\"><b>Support your local</b>\n";
+printf("<h3>%s %s</h3>\n", $row["City"], $row["Keywords1"]);
+printf("<h3><a href=\"http://www.look2victoria.com/%s.htm\">%s in Victoria</a><h3>\n", $row["Keywords1"], $row["Keywords1"]);
+echo "</font></center>  \n";
+....see if it will get Look2Victoria indexed better....today Victoria at 91 pages in google....sucks balls!!!!
+11/04/07
+Results 1 - 10 of about 664 from www.look2vancouver.com
+12/05/07
+Results 1 - 10 of about 608 from www.look2vancouver.com.
+
+
+www.look2victoria.com
+10/04
+- 84 google links +or-
+ - removed links in bottom.php on businesspage.php
+ - Added full address and Province to "if you are XXXXXX and want to upgrade
+ - add British Columbia to description instead of postal code
+11/04
+-Results 1 - 10 of about 1,920 from www.look2victoria.com
+11/07
+1 - 10 of about 2,870 from www.look2victoria.com
+12/05/07
+Results 1 - 10 of about 1,530 from www.look2victoria.com.
+01/25/08
+Results 1 - 10 of about 258 from www.look2victoria.com
+
+
+www.look2utah.com
+11/02 - most traffic from maps.google much less than normal
+01/18/08  Results 1 - 10 of about 1,790 from www.look2utah.com
+can't change files on server ?????
+01/25/08
+increased googlebot to faster crawl
+Results 1 - 10 of about 1,680 from www.look2utah.com
+
+www.look2washington.com
+
+www.look2newmexico.com
+11/02 - most traffic from maps.google much less than normal
+01/18/08 - 1 - 10 of about 5,300
+changes
+printf("<title>%s %s %s | %s</title> \n", $row["Name"], $row["City"], $row["State"], $row["Keywords1"]);
+printf("<meta name=\"keywords\" content=\"%s %s %s, %s, %s, %s, utah, %s %s\">  \n",  $row["Name"], $row["City"], $row["State"], $row["Telephone"], $row["Address"], $row["Keywords1"], $row["Keywords1"], $row["City"]);
+printf("<meta name=\"description\" content=\"%s  - %s - %s %s\">  \n",  $row["Name"], $row["City"], $row["State"], $row["Keywords1"]);
+echo "<link rel=\"stylesheet\" href=\"/dub.css\" type=\"text/css\"/>\n";
+echo "</head> \n";
+echo "<body><center> \n";
+echo "<div style=\"background-color:#FFFF00; width:100%; height:12px;\"> \n";
+echo "<h2 style=\"font-size:12px\"> \n";
+printf("%s %s %s \n", $row["Name"], $row["City"], $row["State"]);
+echo "</h2></div> \n";
+
+and
+
+echo "<div align=\"center\">\n";
+echo "    <table width=\"100%\" cellspacing=\"0\">\n";
+
+echo "        <tr><td width=\"100%\"><font color=\"#000000\" face=\"Verdana\" Size=\"3\"><center><b>  \n";
+
+printf("%s %s %s \n", $row["Name"], $row["City"], $row["State"]);
+
+echo "</b></center></font></td></tr></table></div><br />\n";
+01/09/08
+Results 1 - 10 of about 6,480 from www.look2newmexico.com
+
+01/25/08
+Results 1 - 10 of about 6,160 from www.look2newmexico.com
+increased googlebot to faster crawl
+
+
+
+
+www.look2oregon.com
+01/25/08
+Results 1 - 10 of about 6,000 from www.look2oregon.com
+
+www.look2minnesota.com
+08/30/07
+indexed pages  - 204
+09/30/07
+indexed pages - 220
+changes 
+-b.php -adsense to block from sky and banners
+             -keywords added
+-n.php -keywords to dynamic
+11/09/07
+Results 1 - 10 of about 646 from www.look2minnesota.com
+12/05/07
+Results 1 - 10 of about 408 from www.look2minnesota.com
+01/29/08
+set to faster crawl rate
+Results 1 - 10 of about 128 from www.look2minnesota.co
+
+www.look2albuquerque.com
+www.look2chandler.com
+www.look2charlotte.net
+www.look2fortcollins.com
+www.look2glendale.com
+
+www.look2henderson.com
+01/25/08
+Results 1 - 10 of about 1,010 from www.look2henderson.com. (0.13 seconds) 
+increased googlebot to faster crawl
+
+www.look2indianapolis.com
+
+
+
+www.look2lasvegas.com
+11/05/07
+833 from www.look2lasvegas.com.
+added phpEbay script to index.php--Las Vegas Tickets
+01/25/08
+Results 1 - 10 of about 909 from www.look2lasvegas.co
+01/29/08
+set crawl rate faster
+search.php
+echo "<title>Las Vegas $q</title>	\n"; 
+<?php
+echo  "<p><font face=\"Verdana\" size=\"2\" color=\"#800000\"><b>Las Vegas $q</b></font></p>\"    \n";
+?>
+businesspage.php
+echo "<title>$row[name] $row[city], $row[state] $row[zip]</title> \n";
+echo "<meta name=\"keywords\" content=\"$row[name] Las Vegas, $telephone[telephone], $row[address], $row[keywords2]\"> \n";
+echo "<div><font Size=\"3\"><b>&nbsp;Support  \n";
+
+printf(" %s %s \n", $row["name"], $row["city"]);
+
+echo "</b></font></div><br>  \n";
+02/08/08
+Results 1 - 10 of about 1,270 from www.look2lasvegas.com.
+
+
+
+www.look2mesa.com
+01/25/08
+Results 1 - 10 of about 1,040 from www.look2mesa.com. 
+increased googlebot to faster crawl
+02/08/08
+Results 1 - 10 of about 1,440 from www.look2mesa.com
+
+
+www.look2omaha.com
+www.look2phoenix.com
+www.look2portland.com
+www.look2raleigh.com
+
+www.look2reno.com
+01/25/08
+Results 1 - 10 of about 878 from www.look2reno.com
+increased googlebot to faster crawl
+changed search.php 
+echo "<title>Reno $q</title>	\n"; 
+echo "<meta name=\"description\" content=\"Reno $q  - Nevada Yellowpages and Business Search\">  \n"; 
+<?php
+echo "<p><h2><font face=\"Verdana\" size=\"2\" color=\"#800000\"><b>Reno $q</b></font></h2></p> \n";
+?>
+businesspage.php
+removed dynamic links to other look2 sites
+echo "<title>$row[name] $row[city], $row[state] </title> \n";
+echo "<meta name=\"keywords\" content=\"$row[name] reno, $telephone[telephone], $row[address], $row[keywords2] reno\"> \n";
+echo "<meta name=\"description\" content=\"$row[name] Reno - business search - $row[keywords2]\"> \n";
+01/30/08
+added phpBay to index.php
+02/08/08
+Results 1 - 10 of about 1,230 from www.look2reno.com
+
+
+www.look2spokane.com
+www.look2tucson.com
+01/25/08
+increased googlebot to faster crawl
+
+www.dashforpower.com
+www.healthyrecipesforhealthyliving.com
+
+www.nwrealty.us
+Got rid of the adsesnse
+add clickbank affilitate
+
+www.takingpix.com
+www.tvkids.us
+www.calirealty.us
+www.courtreportingservice.net
+
+www.myancientcoin.com
+10/26/07
+- built site
+11/04/07
+- site indexed
+
+www.pixelizedlife.com
+10/29/07
+- built blog
+11/04/07
+- site indexed

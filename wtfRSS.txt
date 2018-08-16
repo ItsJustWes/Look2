@@ -1,0 +1,49 @@
+
+<table border="0" width="800" cellspacing="0" cellpadding="0">
+<tr><td>
+
+<?php
+$XMLFILE = "http://news.search.yahoo.com/news/rss?p=".$Keywords1."&ei=UTF-8";
+$TEMPLATE = "http://www.look2victoria.com/news3.html";
+$MAXITEMS = "10";
+include("rss2html.php");
+?>
+</td></tr>
+</table>
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<table border="0" width="800" cellspacing="0" cellpadding="0">
+<tr><td>
+
+<?php
+$XMLFILE = "http://rss.canada.com/get/?F123";
+$TEMPLATE = "http://www.look2victoria.com/news3.html";
+$MAXITEMS = "10";
+include("rss2html.php");
+?>
+
+
+</td></tr>
+</table>
+
+
+//////////////////////////////////
+working kinda
+
+<center>
+<table border="0" width="800" cellspacing="0" cellpadding="0">
+<tr><td>
+
+<?php
+
+$XMLFILE = "http://news.search.yahoo.com/news/rss?p=%%Victoria,Business,Canada%%&ei=UTF-8";
+$TEMPLATE = "http://www.look2victoria.com/news3.html";
+$MAXITEMS = "10";
+include("rss2html.php");
+?>
+
+</td></tr>
+</table>
+</center>
+

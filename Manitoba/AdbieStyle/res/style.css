@@ -1,0 +1,361 @@
+html, body {
+width:100%;
+height:100%;
+font-family:verdana,tahoma;
+font-size:11px;
+color: #000000;
+background:#ffffff;
+padding:0px;
+margin:0px;
+}
+
+img{ border:0px none #ffffff; }
+
+a:active, a:link, a:visited, a:focus,a:hover {
+text-decoration:underline;
+color:blue;
+font-family:arial;
+font-size: 11px;
+}
+
+table{
+font-family:verdana,tahoma;
+font-size:11px;
+color: #000000;
+}
+
+.maintable{
+width:100%;
+}
+
+a.resultheader:active, a.resultheader:link, a.resultheader:visited, a.resultheader:focus,a.resultheader:hover {
+font-family:Verdana;
+font-weight:bold;
+font-size: 12px;
+margin-bottom:4px;
+} 
+
+a.searchin:active, a.searchin:link, a.searchin:visited, a.searchin:focus {
+font-family:arial,tahoma,verdana;
+font-size:12px;
+font-weight:bold;
+text-decoration:none;
+color:#F6F5DD;
+}
+
+a.searchin:hover{
+text-decoration:underline;
+}
+
+a.clink1:active, a.clink1:link, a.clink1:visited, a.clink1:focus {
+font-family:arial;
+font-weight:bold;
+font-size: 14px;
+color:#0069BB;
+} 
+
+a.clink1:hover{
+color:#Ff7400;
+text-decoration:underline
+}
+
+a.clink2:active, a.clink2:link, a.clink2:visited, a.clink2:focus {
+font-family:verdana;
+font-size: 11px;
+color:black;
+text-decoration:none;
+} 
+
+a.clink2:hover{
+color:#Ff7400;
+text-decoration:underline;
+}
+
+
+/* Zakladki */
+.bookmarkLeftSel{
+width:3px;
+height:31px;
+background:url('../res/images/bookmark_left.gif') no-repeat bottom;
+}
+.bookmarkCenterSel{
+height:31px;
+text-align:center;
+padding-left: 15px;
+padding-right: 15px;
+padding-top:3px;
+background:url('../res/images/bookmark_center.gif') repeat-x bottom;
+}
+.bookmarkRightSel{
+width:3px;
+height:31px;
+background:url('../res/images/bookmark_right.gif') no-repeat bottom;
+}
+
+.bookmarkLeft{
+width:3px;
+height:31px;
+background:url('../res/images/bookmark_left_sel.gif') no-repeat bottom;
+}
+.bookmarkCenter{
+height:31px;
+text-align:center;
+padding-left: 15px;
+padding-right: 15px;
+padding-top:7px;
+background:url('../res/images/bookmark_center_sel.gif') repeat-x bottom;
+}
+.bookmarkRight{
+width:3px;
+height:31px;
+background:url('../res/images/bookmark_right_sel.gif') no-repeat bottom;
+}
+
+
+table.searchForm{
+width:100%;
+height:60px;
+background:url('../res/images/line.gif') repeat-x;
+border-top:1px solid #D5D5E8;
+border-bottom:1px solid #D5D5E8;
+}
+
+.querytext{
+padding-left:3px;
+border:1px solid #0069BA;
+}
+.querysubmit{
+height:20px;
+border:1px solid #0069BA;
+background:#EDF2FB;
+font-size:11px;
+color:#0069BA;
+}
+
+td.sr_headerText{
+height:30px;
+font-family:arial,tahoma,verdana;
+font-size:12px;
+color:#F6F5DD;
+background:url('../res/images/result_for_back.gif') repeat-x;
+border-bottom:1px solid #FFC000;
+padding-left:10px;
+padding-right:10px;
+}
+
+
+/* RELATED */
+
+td.related{
+padding:5px;
+background:#F3FEFA;
+}
+
+td.rightBoxHead{
+width:200px;
+height:26px;
+padding-left:5px;
+font-family:arial,tahoma,verdana;
+font-size:12px;
+font-weight:bold;
+color:#F6F5DD;
+background:url('../res/images/related_back.gif') repeat-x;
+}
+
+a.related:active, a.related:link, a.related:visited, a.related:focus{
+font-family:arial;
+font-size:13px;
+color:#006BBC;
+padding-left:12px;
+background:url('../res/images/related.bmp') no-repeat left;
+} 
+
+a.related:hover{
+text-decoration:underline;
+}
+
+
+/* MSN */
+div.msnresult{
+width:90%;
+padding-top:7px;
+padding-bottom:7px;
+margin-left:20px;
+font-family:arial;
+font-size:12px;
+border-bottom:1px solid #D5D5E8;
+}
+
+div.msnresultcnt { display:block; width:60%; }
+
+a.msneresult:active, a.msneresult:link, a.msneresult:visited, a.msneresult:focus{
+font-family:arial;
+font-size:13px;
+color:#006BBC;
+} 
+
+a.msneresult:hover{
+text-decoration:underline;
+}
+
+.msnresulturl{
+color:green;
+}
+
+/* EBAY */
+
+div.ebayresult{
+width:60%;
+padding-top:7px;
+padding-bottom:7px;
+margin-left:20px;
+font-family:arial;
+font-size:12px;
+border-bottom:1px solid #D5D5E8;
+}
+
+a.ebayeresult:active, a.ebayeresult:link, a.ebayeresult:visited, a.ebayeresult:focus{
+font-family:arial;
+font-weight:bold;
+font-size:13px;
+color:#006BBC;
+} 
+
+a.ebayeresult:hover{
+text-decoration:underline;
+}
+
+/* AMAZON */
+
+div.amazonresult{
+width:60%;
+padding-top:7px;
+padding-bottom:7px;
+margin-left:20px;
+font-family:arial;
+font-size:12px;
+border-bottom:1px solid #D5D5E8;
+}
+
+td.amazonContent{
+font-family:arial;
+font-size:12px;
+}
+
+a.amazonresult:active, a.amazonresult:link, a.amazonresult:visited, a.amazonresult:focus{
+font-family:arial;
+font-weight:bold;
+font-size:13px;
+color:#006BBC;
+} 
+
+a.amazonresult:hover{
+text-decoration:underline;
+}
+
+td.amazonImg{
+width:60px;
+padding:5px;
+}
+
+
+/* CLICKBANK */
+
+div.clickbankresult{
+width:60%;
+padding-top:7px;
+padding-bottom:7px;
+margin-left:20px;
+font-family:arial;
+font-size:12px;
+border-bottom:1px solid #D5D5E8;
+}
+
+a.clickbankresult:active, a.clickbankresult:link, a.clickbankresult:visited, a.clickbankresult:focus{
+font-family:arial;
+font-size:13px;
+color:#006BBC;
+} 
+
+a.clickbankresult:hover{
+text-decoration:underline;
+}
+
+.clickbankresulturl{
+color:green;
+}
+
+
+div.allResults{
+width:100%;
+text-align:center;
+margin-top:10px;
+margin-bottom:10px;
+border-top:1px solid #D9D8BE;
+border-bottom:1px solid #D9D8BE;
+padding-top:5px;
+padding-bottom:5px;
+background:#F3FEFA;
+}
+
+
+
+div.result{
+width:380px;
+margin-left: 5px;
+margin-right: 15px;
+margin-top: 2px;
+padding-bottom:30px;
+font-size:11px;
+}
+
+span.resulturl{
+font-size:10px;
+color:green;
+}
+
+td.resultImg{
+width:60px;
+padding:5px;
+}
+
+td.resultContent{
+font-family:arial;
+font-size:12px;
+padding:5px;
+}
+
+div.related{
+padding-left:5px;
+}
+
+a.related:active, a.related:link, a.related:visited, a.related:focus,a.related:hover {
+font-family:arial;
+font-size: 11px;
+} 
+
+div.pagination{
+width:100%;
+text-align:center;
+margin-top:15px;
+padding:5px;
+color:#008FEA;
+font-weight:bold;
+}
+
+div.pagination a { 
+font-family:arial;
+font-size:11px;
+font-weight:bold;
+padding-top:2px;
+padding-bottom:2px;
+padding-left:5px;
+padding-right:5px;
+background:#008FEA;
+border:1px solid #D5D5E8;
+color:#fff;
+text-decoration:none;
+}
+
+div.pagination span { font-family:arial; font-size:11px; font-weight:bold; padding-top:2px; padding-bottom:2px; padding-left:5px; padding-right:5px; background:#008FEA; border:1px solid #D5D5E8; color:#FFC000; text-decoration:none; }
+div.pagination a:hover { font-size:11px; text-decoration:none; border:1px solid #FFC000; color:#FFC000; }

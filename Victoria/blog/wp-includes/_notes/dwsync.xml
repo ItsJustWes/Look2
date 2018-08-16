@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="author-template.php" local="128111910040000000" remote="128195892000000000" testing="0" />
+<file name="bookmark-template.php" local="128141857420000000" remote="128195892000000000" testing="0" />
+<file name="bookmark.php" local="128089041280000000" remote="128195892000000000" testing="0" />
+<file name="cache.php" local="128148194140000000" remote="128195892000000000" testing="0" />
+<file name="capabilities.php" local="128145166820000000" remote="128195892000000000" testing="0" />
+<file name="category-template.php" local="128137355360000000" remote="128195892000000000" testing="0" />
+<file name="category.php" local="128147183200000000" remote="128195892000000000" testing="0" />
+<file name="class-IXR.php" local="127784956920000000" remote="128195892000000000" testing="0" />
+<file name="class-pop3.php" local="127495565900000000" remote="128195892000000000" testing="0" />
+<file name="class-snoopy.php" local="127992466900000000" remote="128195892000000000" testing="0" />
+<file name="classes.php" local="128139447480000000" remote="128195892000000000" testing="0" />
+<file name="comment-template.php" local="128111910040000000" remote="128195892000000000" testing="0" />
+<file name="comment.php" local="128128261480000000" remote="128195892000000000" testing="0" />
+<file name="compat.php" local="128084181660000000" remote="128195892000000000" testing="0" />
+<file name="cron.php" local="128147184080000000" remote="128195892000000000" testing="0" />
+<file name="default-filters.php" local="128093717360000000" remote="128195892000000000" testing="0" />
+<file name="deprecated.php" local="128132186220000000" remote="128195892000000000" testing="0" />
+<file name="feed.php" local="128099590440000000" remote="128195892000000000" testing="0" />
+<file name="formatting.php" local="128164453000000000" remote="128195892000000000" testing="0" />
+<file name="functions.php" local="128170557760000000" remote="128195892000000000" testing="0" />
+<file name="general-template.php" local="128137398340000000" remote="128195892000000000" testing="0" />
+<file name="gettext.php" local="128134066680000000" remote="128195892000000000" testing="0" />
+<file name="kses.php" local="128111714740000000" remote="128195894400000000" testing="0" />
+<file name="l10n.php" local="128136372060000000" remote="128195894400000000" testing="0" />
+<file name="link-template.php" local="128129850440000000" remote="128195894400000000" testing="0" />
+<file name="locale.php" local="128127102660000000" remote="128195894400000000" testing="0" />
+<file name="pluggable.php" local="128087358300000000" remote="128195895000000000" testing="0" />
+<file name="plugin.php" local="128100447340000000" remote="128195895000000000" testing="0" />
+<file name="post-template.php" local="128149295440000000" remote="128195895000000000" testing="0" />
+<file name="post.php" local="128144359780000000" remote="128195895000000000" testing="0" />
+<file name="query.php" local="128166878020000000" remote="128195895000000000" testing="0" />
+<file name="registration-functions.php" local="128132325320000000" remote="128195895000000000" testing="0" />
+<file name="registration.php" local="128110655520000000" remote="128195895000000000" testing="0" />
+<file name="rewrite.php" local="128093468460000000" remote="128195895000000000" testing="0" />
+<file name="rss-functions.php" local="128132325320000000" remote="128195895000000000" testing="0" />
+<file name="rss.php" local="128129808960000000" remote="128195895000000000" testing="0" />
+<file name="script-loader.php" local="128169609440000000" remote="128195895000000000" testing="0" />
+<file name="streams.php" local="127967205600000000" remote="128195895000000000" testing="0" />
+<file name="template-loader.php" local="127928307660000000" remote="128195895000000000" testing="0" />
+<file name="theme.php" local="128139049820000000" remote="128195895000000000" testing="0" />
+<file name="user.php" local="128095082900000000" remote="128195895000000000" testing="0" />
+<file name="vars.php" local="128099590440000000" remote="128195895000000000" testing="0" />
+<file name="version.php" local="128173517500000000" remote="128195895000000000" testing="0" />
+<file name="wp-db.php" local="128134099620000000" remote="128195895000000000" testing="0" />
+</dwsync>

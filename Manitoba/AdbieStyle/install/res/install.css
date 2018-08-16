@@ -1,0 +1,150 @@
+body, html{
+width:100%;
+height:100%;
+padding:0px;
+margin:0px;
+font-family:verdana;
+font-size:11px;
+background:#fff;
+}
+
+a.blank:active, a.blank:link, a.blank:visited, a.blank:focus {
+text-decoration:none;
+color:#004E97;
+font-family:arial;
+font-size: 11px;
+font-weight:bold;
+background:url('../res/blank.bmp') no-repeat right;
+padding-right:10px;
+}
+
+a.blank:hover{
+color:#Ff6603;
+text-decoration:underline;
+}
+
+
+td.left{
+width:50%;
+height:35px;
+font-family:verdana;
+font-size:11px;
+font-weight:normal;
+test-align:right;
+color:#525252;
+padding:10px;
+border-bottom:1px solid #cfcfcf;
+}
+
+td.right{
+width:50%;
+height:35px;
+padding-left:10px;
+border-bottom:1px solid #cfcfcf;
+}
+
+td.center{
+height:35px;
+font-family:verdana;
+font-size:11px;
+font-weight:bold;
+test-align:center;
+color:#525252;
+padding:10px;
+border-bottom:1px solid #cfcfcf;
+}
+
+.button{
+width:100px;
+height:25px;
+font-family:arial;
+font-size:12px;
+font-weight:bold;
+background: url('../res/header.gif') repeat-x; 
+border:2px solid #FFBA00;
+color:#FFFCED;
+}
+
+.text{
+width:300px;
+font-family:arial;
+font-size:12px;
+border:1px solid #014B86;
+}
+
+.select{
+width:300px;
+font-family:arial;
+font-size:12px;
+border:1px solid #014B86;
+}
+
+.textarea{
+width:300px;
+height:100px;
+font-family:arial;
+font-size:12px;
+border:1px solid #014B86;
+}
+
+b.err{
+font-family:verdana;
+font-size:11px;
+color:red;
+}
+
+/* USER LOGIN */
+table.logintable {
+ width: 100%;
+ height: 100%;
+ border: 1px solid #aaaaaa;
+ padding: 7px;
+}
+
+div.auth {
+ width: 350px;
+ height: 220px;
+ border: 1px solid #b1b1b1;
+ background-color: #f9f9f9;
+}
+
+div.authtext {
+ font-size: 12px;
+ font-weight: bold;
+ text-align: center;
+ width: 100%;
+ height: 40px;
+ padding-top: 20px;
+ padding-bottom: 0px;
+ margin-bottom: 20px;
+}
+
+#login.auth_text, #password.auth_text{
+border: 1px solid #b1b1b1;
+font-size:11px;
+width:100px;
+}
+
+table.authrow {
+ width: 100%;
+ text-align: center;
+}
+
+div.authrow {
+ width: 100%;
+ text-align: center;
+ padding-top: 13px;
+}
+
+.authcol1 {
+ text-align: right;
+ width: 40%;
+ font-size:10px;
+ padding-right: 40px;
+}
+
+.authcol2 {
+ text-align: left;
+ width: 60%;
+ padding-left: 10px;
+}

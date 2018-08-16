@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<rss version='2.0'>
+<channel>
+<title>British Columbia Business</title>
+<link>http://www.look2britishcolumbia.com</link>
+<description>BC business news featuring business in British Columbia Canada</description>
+<item>
+<title>BC news</title>
+<link>http://www.look2britishcolumbia.com</link>
+<description>http://rss.cbc.ca/britishcolumbianews.xml</description>
+</item>
+<item>
+<title>BC Commerce</title>
+<link>http://www.look2britishcolumbia.com</link>
+<description>http://www.bcchamber.org/blog/rss/default.xml</description>
+</item>
+<item>
+<title>Canada Business News</title>
+<link>http://www.look2britishcolumbia.com</link>
+<description>http://www.theglobeandmail.com/generated/rss/BN/Business.xml</description>
+</item>
+<item>
+<title>BC Small Business</title>
+<link>http://www.look2britishcolumbia.com</link>
+<description>http://www2.news.gov.bc.ca/nrm_rss_news/MinistryofSmallBusinessandRevenue.xml</description>
+</item>
+<item>
+<title>British Columbia Economic Development</title>
+<link>http://www.look2britishcolumbia.com</link>
+<description>http://www2.news.gov.bc.ca/nrm_rss_news/MinistryofEconomicDevelopment.xml</description>
+</item>
+</channel>
+</rss>

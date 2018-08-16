@@ -1,0 +1,22 @@
+Id,  Name,  Address,  City,  Province,  Zip,  Telephone,  Keywords1
+
+CREATE TABLE `Quebec` (
+  `Id` mediumint(15) NOT NULL auto_increment,
+  `Name` varchar(255) NOT NULL default '',
+  `Address` varchar(255) NOT NULL default '',
+  `City` varchar(255) NOT NULL default '',
+  `Province` varchar(255) NOT NULL default '',
+  `Zip` varchar(255) NOT NULL default '',
+  `Telephone` varchar(255) NOT NULL default '',
+  `Keywords1` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`Id`),
+  FULLTEXT KEY `Name` (`Name`),
+  FULLTEXT KEY `Keywords1` (`Keywords1`),
+  FULLTEXT KEY `Address` (`Address`),
+  FULLTEXT KEY `City` (`City`),
+  FULLTEXT KEY `Telephone` (`Telephone`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ;
+
+
+api key
+ABQIAAAAoIxEzse0hCAeXEJftW8hWhSGS7418P7BrY9iG85a0-8JNMFtLxQBEdBz9ldEuXcdH3Mr-aoAQE_Ngw

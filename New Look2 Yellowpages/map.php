@@ -1,0 +1,422 @@
+<style type="text/css">
+      
+      /* Generic map, side bar holder styles */
+      .MapBuilder {font: normal small verdana, arial, helvetica, sans-serif; font-size: 10pt; margin: 0px;}
+      .MapBuilder a {text-decoration: none; color: #0066CC; background-color: transparent;}
+      .MapBuilder a:hover {color: #F60; background-color: transparent;}
+      .MapBuilder h1 {font-weight: bold; font-size: 16pt; color: #369; border-bottom: 2px solid #369;}
+      
+      /* Info Window styles */
+      .IW { width: 350px;}
+      .IWContent {height: 50px; overflow:auto;}
+      .IWCaption {font-weight: bold; font-size: 12pt; color: #369; border-bottom: 2px solid #369;}
+      .IWFooter {margin-top: 5px; font-size: 8pt; }
+      .IWFooterZoom {}
+      .IWDirections{background-color:#FFF;}
+
+ 
+
+            /* PDMarker */
+      div.markerTooltip {
+        color: black;
+        background-color: white;
+        white-space: nowrap;
+        margin: 0;
+        padding: 2px 4px;
+        border: 1px solid black;
+      }
+      
+    </style>
+
+    <!-- Please, request sign up for your own GMAP KEY at http://www.google.com/apis/maps/signup.html and replace 'GMAPKEY' entry with generated key in the line below. -->
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAoIxEzse0hCAeXEJftW8hWhRW8sZgDlTrdR7qwsfgjBojFQoHUhSA4yyKGnThpRSXYaDES9xXBVBTFQ" type="text/javascript"></script>
+    <script src="http://www.mapbuilder.net/js/api/google/v2.03/?UserName=dubtheaxe&amp;Map=37707&amp;SideBar=None" type="text/javascript"></script>
+    <script type="text/javascript" src="http://www.mapbuilder.net/libs/pdmarker/pdmarker1.99e_custom.js"></script>
+    
+    <script type="text/javascript">
+    //<![CDATA[
+
+    // Global Variables
+    // set map variable
+    var map = null;
+    //set up array of locations
+    var aLocations = new Array;
+
+    /*************************** Configuration Options ***************************/
+    /*PDMarker is used to display tooltips when the user hovers over the markers.
+    * PDMarker is a LGPL library provided by Peter Jones. 
+    * For details see http://wwww.pixeldevelopment.com/pdmarker.asp
+    */
+    var usePDMarker = true;
+
+    // Create a base "tiny" red  icon that specifies the shadow, icon dimensions, etc.
+    var iconsm = new GIcon();
+    iconsm.image = "http://labs.google.com/ridefinder/images/mm_20_red.png";
+    iconsm.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+    iconsm.iconSize = new GSize(12, 20);
+    iconsm.shadowSize = new GSize(20, 18);
+    iconsm.iconAnchor = new GPoint(6, 20);
+    iconsm.infoWindowAnchor = new GPoint(5, 1);
+
+    // Create a base "large" red icon that specifies the shadow, icon dimensions, etc.
+    var iconbig = new GIcon();
+    iconbig.image = "http://www.google.com/mapfiles/marker.png";
+    iconbig.shadow = "http://www.google.com/mapfiles/shadow50.png";
+    iconbig.iconSize = new GSize(20, 34);
+    iconbig.shadowSize = new GSize(37, 34);
+    iconbig.iconAnchor = new GPoint(6, 34);
+    iconbig.infoWindowAnchor = new GPoint(5, 1);
+
+    // Custom Icon
+    var iconcustom = new GIcon(iconbig);
+    iconcustom.shadow = '';
+
+    function onLoad() {
+      if (!GBrowserIsCompatible()) 
+      {
+         document.getElementById("MapBuilderMap").innerHTML = "Unfortunately your browser doesn't support Google Maps.<br /> To check browser compatibility visit the following <a href=\"http://local.google.com/support/bin/answer.py?answer=16532&topic=1499\">link</a>.";
+         return;
+      }
+
+      map = new GMap2(document.getElementById("MapBuilderMap"));
+      var MB = new MapBuilder(map);
+      map.addControl(new GSmallMapControl());
+      map.addControl(new GMapTypeControl());
+      // Center the map to the default location and set map type
+      map.setCenter(new GLatLng(47.398349200359256, -92.109375), 4, map.getMapTypes()[0]);
+      	  
+      // Initialize variables
+      var point = null;
+      var footerHtml = null;
+      var InfoHTML = null;
+      var marker = null;
+      /* Options used for PDMarker initialization:
+      * label: tooltip text
+      * opasity: tooltip opasity
+      */
+      var options = {};
+
+      // Add locations
+	
+      point = new GLatLng(54.265224078605655, -114.78515625);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(0)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Alberta'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWContent\"><a href=\"http://www.look2alberta.com\">Alberta business</a><br>Address, phone numbers and maps of <b>local Alberta businesses</b><br><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_red.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 0);
+      map.addOverlay(marker);
+      aLocations[0] = new Array(marker, "Look2 Alberta", InfoHTML, point);
+	
+      point = new GLatLng(35.084198, -106.649246);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(2)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Albuquerque'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Albuquerque</div><div class=\"IWContent\"><a href=\"http://www.look2albuquerque.com\"><b>Albuquerque business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 1);
+      map.addOverlay(marker);
+      aLocations[1] = new Array(marker, "Look2 Albuquerque", InfoHTML, point);
+	
+      point = new GLatLng(53.69670647530323, -124.365234375);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(2)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 British Columbia'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 British Columbia</div><div class=\"IWContent\"><a href=\"http://www.look2britishcolumbia.com\">British Columbia Business</a><br>Address, phone numbers and maps of <b>local British Columbia businesses</b><br><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_red.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 2);
+      map.addOverlay(marker);
+      aLocations[2] = new Array(marker, "Look2 British Columbia", InfoHTML, point);
+	
+      point = new GLatLng(33.30463, -111.840042);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(3)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Chandler'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Chandler</div><div class=\"IWContent\"><a href=\"http://www.look2chandler.com\"><b>Chandler business search</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 3);
+      map.addOverlay(marker);
+      aLocations[3] = new Array(marker, "Look2 Chandler", InfoHTML, point);
+	
+      point = new GLatLng(35.22723, -80.842972);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(4)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Charlotte'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Charlotte</div><div class=\"IWContent\"><a href=\"http://www.look2charlotte.net\"><b>Charlotte North Carolina business search</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 4);
+      map.addOverlay(marker);
+      aLocations[4] = new Array(marker, "Look2 Charlotte", InfoHTML, point);
+	
+      point = new GLatLng(40.585609, -105.083733);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(5)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Fort Collins'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Fort Collins</div><div class=\"IWContent\"><a href=\"http://www.look2fortcollins.com\"><b>Fort Collins business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 5);
+      map.addOverlay(marker);
+      aLocations[5] = new Array(marker, "Look2 Fort Collins", InfoHTML, point);
+	
+      point = new GLatLng(33.53767, -112.184906);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(6)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Glendale'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Glendale</div><div class=\"IWContent\"><a href=\"http://www.look2glendale.com\"><b>Glendale Arizona business search</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 6);
+      map.addOverlay(marker);
+      aLocations[6] = new Array(marker, "Look2 Glendale", InfoHTML, point);
+	
+      point = new GLatLng(36.039669, -114.981453);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(7)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Henderson'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Henderson</div><div class=\"IWContent\"><a href=\"http://www.look2henderson.com\"><b>Henderson Nevada business search</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 7);
+      map.addOverlay(marker);
+      aLocations[7] = new Array(marker, "Look2 Henderson", InfoHTML, point);
+	
+      point = new GLatLng(39.767899, -86.158081);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(8)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Indianapolis'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Indianapolis</div><div class=\"IWContent\"><a href=\"http://www.look2indianapolis.com\"><b>Indianapolis business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 8);
+      map.addOverlay(marker);
+      aLocations[8] = new Array(marker, "Look2 Indianapolis", InfoHTML, point);
+	
+      point = new GLatLng(36.174179, -115.13533);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(9)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Las Vegas'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Las Vegas</div><div class=\"IWContent\"><a href=\"http://www.look2lasvegas.com\"><b>Las Vegas business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 9);
+      map.addOverlay(marker);
+      aLocations[9] = new Array(marker, "Look2 Las Vegas", InfoHTML, point);
+	
+      point = new GLatLng(33.42239, -111.822746);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(10)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Mesa'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Mesa</div><div class=\"IWContent\"><a href=\"http://www.look2mesa.com\"><b>Mesa Arizona business search</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 10);
+      map.addOverlay(marker);
+      aLocations[10] = new Array(marker, "Look2 Mesa", InfoHTML, point);
+	
+      point = new GLatLng(45.767522962149904, -94.658203125);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(11)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Minnesota'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Minnesota</div><div class=\"IWContent\"><a href=\"http://www.look2minnesota.com\"><b>Minnesota business</b></a><br>Address, phone numbers and maps of <b>local Minnesota </b><b>businesses</b><br><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_yellow.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 11);
+      map.addOverlay(marker);
+      aLocations[11] = new Array(marker, "Look2 Minnesota", InfoHTML, point);
+	
+      point = new GLatLng(46.4378568950242, -65.91796875);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(12)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 New Brunswick'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 New Brunswick</div><div class=\"IWContent\"><a href=\"http://www.look2newbrunswick.com\"><b>New Brunswick Business</b></a><br>Address, phone numbers and maps of <b>local New Brunswick businesses.</b><br><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_red.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 12);
+      map.addOverlay(marker);
+      aLocations[12] = new Array(marker, "Look2 New Brunswick", InfoHTML, point);
+	
+      point = new GLatLng(34.3797125804622, -106.171875);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(13)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 New Mexico'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 New Mexico</div><div class=\"IWContent\"><a href=\"http://www.look2newmexico.com\"><b>New Mexico Business </b></a><br>Address, phone numbers and maps of <b>local New Mexico </b><b>businesses</b><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_yellow.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 13);
+      map.addOverlay(marker);
+      aLocations[13] = new Array(marker, "Look2 New Mexico", InfoHTML, point);
+	
+      point = new GLatLng(53.85252660044951, -60.556640625);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(14)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Newfoundland'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Newfoundland</div><div class=\"IWContent\"><a href=\"http://www.look2newfoundland.com\"><b>Newfoundland business</b></a><br>Address, phone numbers and maps of <b>local Newfoundland and Labrador businesses.<br></b><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_red.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 14);
+      map.addOverlay(marker);
+      aLocations[14] = new Array(marker, "Look2 Newfoundland", InfoHTML, point);
+	
+      point = new GLatLng(44.96479793033101, -63.017578125);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(15)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Nova Scotia'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Nova Scotia</div><div class=\"IWContent\"><a href=\"http://www.look2novascotia.com\"><b>Nova Scotia business</b></a><br>Address, phone numbers and maps of <b>local Nova Scotia businesses</b><br><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_red.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 15);
+      map.addOverlay(marker);
+      aLocations[15] = new Array(marker, "Look2 Nova Scotia", InfoHTML, point);
+	
+      point = new GLatLng(41.257568, -95.93718);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(16)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Omaha'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Omaha</div><div class=\"IWContent\"><a href=\"http://www.look2omaha.com\"><b>Omaha Nebraska business search</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 16);
+      map.addOverlay(marker);
+      aLocations[16] = new Array(marker, "Look2 Omaha", InfoHTML, point);
+	
+      point = new GLatLng(43.96119063892024, -120.498046875);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(17)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Oregon'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Oregon</div><div class=\"IWContent\"><a href=\"http://www.look2oregon.com\"><b>Oregon Business</b></a><br>Address, phone number and maps<b> </b>of<b> local Oregon businesses</b><br><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_yellow.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 17);
+      map.addOverlay(marker);
+      aLocations[17] = new Array(marker, "Look2 Oregon", InfoHTML, point);
+	
+      point = new GLatLng(33.447201, -112.073166);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(18)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Phoenix'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Phoenix</div><div class=\"IWContent\"><a href=\"http://www.look2phoenix.com\"><b>Phoenix business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 18);
+      map.addOverlay(marker);
+      aLocations[18] = new Array(marker, "Look2 Phoenix", InfoHTML, point);
+	
+      point = new GLatLng(45.52383, -122.675346);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(19)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Portland'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Portland</div><div class=\"IWContent\"><a href=\"http://www.look2portland.com\"><b>Portland Business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 19);
+      map.addOverlay(marker);
+      aLocations[19] = new Array(marker, "Look2 Portland", InfoHTML, point);
+	
+      point = new GLatLng(49.95121990866204, -74.443359375);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(20)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Quebec'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Quebec</div><div class=\"IWContent\"><a href=\"http://www.look2quebec.com\"><b>Quebec business</b></a><br>Address, phone numbers and maps of <b>local Quebec businesses</b><br><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_red.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 20);
+      map.addOverlay(marker);
+      aLocations[20] = new Array(marker, "Look2 Quebec", InfoHTML, point);
+	
+      point = new GLatLng(35.772888, -78.638474);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(21)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Raleigh'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Raleigh</div><div class=\"IWContent\"><a href=\"http://www.look2raleigh.com\"><b>Raleigh business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 21);
+      map.addOverlay(marker);
+      aLocations[21] = new Array(marker, "Look2 Raleigh", InfoHTML, point);
+	
+      point = new GLatLng(39.530109, -119.812912);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(22)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Reno'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Reno</div><div class=\"IWContent\"><a href=\"http://www.look2reno.com\"><b>Reno business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 22);
+      map.addOverlay(marker);
+      aLocations[22] = new Array(marker, "Look2 Reno", InfoHTML, point);
+	
+      point = new GLatLng(47.660049, -117.424919);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(23)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Spokane'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Spokane</div><div class=\"IWContent\"><a href=\"http://www.look2spokane.com\"><b>Spokane Business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 23);
+      map.addOverlay(marker);
+      aLocations[23] = new Array(marker, "Look2 Spokane", InfoHTML, point);
+	
+      point = new GLatLng(32.221569, -110.925133);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(24)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Tucson'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Tucson</div><div class=\"IWContent\"><a href=\"http://www.look2tucson.com\"><b>Tucson business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_yellow.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 24);
+      map.addOverlay(marker);
+      aLocations[24] = new Array(marker, "Look2 Tucson", InfoHTML, point);
+	
+      point = new GLatLng(39.095962936305476, -111.796875);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(25)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Utah'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Utah</div><div class=\"IWContent\"><a href=\"http://www.look2utah.com\"><b>Utah Business</b></a><br>Address, phone number and maps.&nbsp; <b>Local Utah Businesses</b><br><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_yellow.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 25);
+      map.addOverlay(marker);
+      aLocations[25] = new Array(marker, "Look2 Utah", InfoHTML, point);
+	
+      point = new GLatLng(49.210420445650286, -123.0908203125);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(26)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Vancouver'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Vancouver</div><div class=\"IWContent\"><a href=\"http://www.look2vancouver.com\">Vancouver BC business search</a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_red.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 26);
+      map.addOverlay(marker);
+      aLocations[26] = new Array(marker, "Look2 Vancouver", InfoHTML, point);
+	
+      point = new GLatLng(48.40003249610685, -123.4423828125);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(27)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Victoria'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Victoria</div><div class=\"IWContent\"><a href=\"http://www.look2victoria.com\"><b>Victoria business</b></a><br></div>" + footerHtml + "</div>";
+      iconsm.image = "http://www.mapbuilder.net/img/icons/marker_20_red.png";
+      marker = createMarker(point, InfoHTML, iconsm, options, 27);
+      map.addOverlay(marker);
+      aLocations[27] = new Array(marker, "Look2 Victoria", InfoHTML, point);
+	
+      point = new GLatLng(47.398349200359256, -120.322265625);
+      footerHtml = "<div class=\"IWFooter\"><div class=\"IWFooterZoom\"><a href=\"javascript:void(0)\" onclick=\"ZoomMapTo(28)\">Zoom To</a></div></div>";
+
+      // Define Marker
+      options = {opasity: 100, label:'Look2 Washington'}; 
+      InfoHTML = "<div class=\"IW\"><div class=\"IWCaption\">Look2 Washington</div><div class=\"IWContent\"><a href=\"http://www.look2washington.com\"><b>Washington Business</b></a><br>Address, phone number and maps of <b>local Washington businesses</b><br><br></div>" + footerHtml + "</div>";
+      iconbig.image = "http://www.mapbuilder.net/img/icons/marker_34_yellow.png";
+      marker = createMarker(point, InfoHTML, iconbig, options, 28);
+      map.addOverlay(marker);
+      aLocations[28] = new Array(marker, "Look2 Washington", InfoHTML, point);
+    }
+
+    //]]>
+    </script>

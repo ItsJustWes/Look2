@@ -1,0 +1,4 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /examples/
+RewriteRule ^images/e/(.*)$ http://thumbs.ebaystatic.com/pict/$1 [R,L]

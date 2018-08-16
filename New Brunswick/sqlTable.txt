@@ -1,0 +1,25 @@
+CREATE TABLE `New Brunswick` (
+  `Id` mediumint(15) NOT NULL auto_increment,
+  `Name` varchar(255) NOT NULL default '',
+  `Contact` varchar(255) NOT NULL default '',
+  `Address` varchar(255) NOT NULL default '',
+  `City` varchar(255) NOT NULL default '',
+  `State` varchar(255) NOT NULL default '',
+  `Zip` varchar(255) NOT NULL default '',
+  `Telephone` varchar(255) NOT NULL default '',
+  `Fax` varchar(255) NOT NULL default '',
+  `Web` varchar(255) NOT NULL default '',
+  `Email` varchar(255) NOT NULL default '',
+  `Description` blob NOT NULL,
+  `Keywords1` varchar(255) NOT NULL default '',
+  `Keywords1` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`Id`),
+  FULLTEXT KEY `Name` (`Name`),
+  FULLTEXT KEY `Keywords1` (`Keywords1`),
+  FULLTEXT KEY `Keywords1` (`Keywords1`),
+  FULLTEXT KEY `Address` (`Address`),
+  FULLTEXT KEY `City` (`City`),
+  FULLTEXT KEY `Telephone` (`Telephone`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO `New Brunswick` (`Id`, `Name`, `Contact`, `Address`, `City`, `State`, `Zip`, `Telephone`, `Fax`, `Web`, `Email`, `Description`, `Keywords1`, `Keywords1`)
